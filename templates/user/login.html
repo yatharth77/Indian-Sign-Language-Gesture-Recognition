@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'user/css/index.css' %}" >
+    <script src="{% static 'user/css/index.js' %}"></script>
+</head>
+<body style="background-image: url({% static 'user/images/login3.jpg' %});">
+    <nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: rgb(109,0,0);">
+        <img src="{% static 'aud2gest/images/logo3.png' %}" height="45px" width="45px" style="">
+        <div class="container">
+          <a class="navbar-brand" href="#">Koe No Katachi</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item ">
+                <a class="nav-link" href="../about_team">About Our Team
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../about_project">About Our Project</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../instruction">Instructions</a>
+              </li>
+             {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="../logout">Logout</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+    </nav>
+<div class="container" >
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 col-md-offset-4 phone" style="background-color: black">
+            <div class="row1">
+                <div class="col-md-12">
+                <form method="POST">
+                        {%csrf_token%}
+                        <input type="tel" name="username" id="telNumber" class="form-control tel" value="" />
+                            <div class="num-pad">
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/1.jpeg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        1
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/2.jpeg' %});background-size: contain;">
+                                    <div class="txt" hidden> 
+                                        2 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/3.jpeg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        3 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/4.jpeg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        4 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/5.jpeg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        5 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4" >
+                                <div class="num" style="background-image:url({% static 'user/images/6.jpeg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        6 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url('{% static 'user/images/7.jpeg' %}');background-size: contain;">
+                                    <div class="txt" hidden>
+                                        7 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url('{% static 'user/images/8.jpeg' %}');background-size: contain;">
+                                    <div class="txt" hidden>
+                                        8
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url('{% static 'user/images/9.jpeg' %}');background-size: contain;">
+                                    <div class="txt" hidden>
+                                        9
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url('{% static 'user/images/0.jpeg' %}');background-size: contain;">
+                                    <div class="txt" hidden>
+                                        0
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                            </div>
+                            </div>
+                            <div class="clearfix">
+                            </div>
+                                <button class="btn btn-success btn-block flatbtn" type="submit">Login</button>
+                                <p align="center" style="">ENTER CREDENTIALS</p>
+
+                     </form> 
+                     <h5 align="center" style="color: red">New User? &nbsp;<a href="../register">Sign Up Here</a></h5>
+                </div>
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'user/css/index.css' %}" >
+    <script src="{% static 'user/css/index.js' %}"></script>
+</head>
+<body style="background-image: url({% static 'user/images/login3.jpg' %});">
+    <nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: rgb(109,0,0);">
+        <img src="{% static 'aud2gest/images/logo3.png' %}" height="45px" width="45px" style="">
+        <div class="container">
+          <a class="navbar-brand" href="../home">Koe No Katachi</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item ">
+                <a class="nav-link" href="../about_team">About Our Team
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../about_project">About Our Project</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../instruction">Instructions</a>
+              </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="../logout">Logout</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+    </nav>
+<div class="container" >
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 col-md-offset-4 phone" style="background-color: black">
+            <div class="row1">
+                <div class="col-md-12">
+                <form method="POST">
+                        {%csrf_token%}
+                        <input type="tel" name="gest_text" id="telNumber" class="form-control tel" value="{{gest_text}}" />
+                            <div class="num-pad">
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/A.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        A
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/B.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        B
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/C.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden> 
+                                        C 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/D.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        D 
+                                    </div>
+                                </div>
+                            </div><div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/E.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        E
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/F.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden> 
+                                        F 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/G.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        G 
+                                    </div>
+                                </div>
+                            </div><div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/H.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        H
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/I.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden> 
+                                        I 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/J.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        J 
+                                    </div>
+                                </div>
+                            </div><div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/K.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        K
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/L.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden> 
+                                        L 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/M.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        M 
+                                    </div>
+                                </div>
+                            </div><div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/N.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        N
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/O.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden> 
+                                        O 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/P.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        P 
+                                    </div>
+                                </div>
+                            </div><div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/Q.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        Q
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/R.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden> 
+                                        R 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/S.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        S 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/T.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        T 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/U.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        U 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4" >
+                                <div class="num" style="background-image:url({% static 'user/images/V.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden>
+                                        V 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url('{% static 'user/images/W.jpg' %}');background-size: contain;">
+                                    <div class="txt" hidden>
+                                        W 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url('{% static 'user/images/X.jpg' %}');background-size: contain;">
+                                    <div class="txt" hidden>
+                                        X
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url('{% static 'user/images/Y.jpg' %}');background-size: contain;">
+                                    <div class="txt" hidden>
+                                        Y
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url('{% static 'user/images/Z.jpg' %}');background-size: contain;">
+                                    <div class="txt" hidden>
+                                        Z
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="span4">
+                                <div class="num" style="background-image:url({% static 'user/images/space.jpg' %});background-size: contain;">
+                                    <div class="txt" hidden >
+                                    	space
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="clearfix">
+                            </div>
+                                <button class="btn btn-success btn-block flatbtn" type="submit">Hear this!</button>
+                                <p align="center">Koe No Katachi</p>
+                     </form>   
+                </div>
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Bare - Start Bootstrap Template</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="{% static 'aud2gest/css/main_page2.css' %}" >
+
+</head>
+
+<body >
+  <!-- Navigation --> 
+  <nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: rgb(109,0,0);">
+    <a href="../index"><img src="{% static 'aud2gest/images/logo3.png' %}" height="45px" width="45px" style=""></a>
+    <div class="container">
+      <a class="navbar-brand" href="../home">Koe No Katachi</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="../about_team">About Our Team
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../about_project">About Our Project</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../instruction">Instructions</a>
+          </li>
+          {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="../logout">Logout</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="../login">Login</a>
+              </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="row split_pane" >
+        <div class="col-sm-6 left" align="center" id="left_side">
+          <h4 style="">Convert Audio To Gestures</h4>
+          <br>
+          <br><br>
+          <h4>Record And Confirm Audo</h4>
+          <button type="button" class="btn btn-dark" id=record>Record</button>
+          <button type="button" class="btn btn-dark" id=stopRecord disabled>Stop</button>
+          <p>
+            <audio id=recordedAudio></audio>
+          </p>
+          <button type="button" class="btn btn-dark" id="confirm" onclick="sendData()">Confirm</button>
+          <br>
+          <hr>
+          <br>
+          <h4>Upload Audio</h4>
+          <form method="POST" action="" enctype="multipart/form-data" id="post-form" name="fupload" >
+            {% csrf_token %}
+            {{ form }}  
+            <br>
+            <hr><br>
+<!--             <img src="{% static 'aud2gest/images/load.gif' %}" id="loading" style="display: none" height="300px" width="300px"> -->
+            <h4>Submit To Convert</h4>
+            <button type="button" class="btn btn-dark" onclick="foo()" id="upload-files-btn">Submit</button>
+          </form>
+        </div>
+        <div class="col-sm-6 right" align="center" id="right_side">
+        	<!-- <input style="height: 50px;width: 50px" type="radio" name="choice" id="radio2" onclick="choice_side()"> -->
+        	<h4 style="color:#e3e3e3;">Gestures To Audio</h4>
+          <br><br><br><br><br><br><br><br>
+
+          <!-- <form action='actionUrl' method='GET'> -->
+            <button type="button" class="btn btn-light" onclick="webcam()" style="margin-top: 100px; height: 60px; width: 150px">Press To Record Video</button>
+            <button type="button" class="btn btn-light" onclick="window.location.href='../gest_keyboard'" style="margin-top: 100px; height: 60px; width: 150px">Use Gesture Keyboard</button>
+          <!-- </form> -->
+
+        </div>
+    </div> 
+
+<!--Loading Modal -->
+<div class="container">
+  <div class="modal fade" id="load_modal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+         <img src="{% static 'aud2gest/images/load.gif' %}" id="loading">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Loading modal -->
+
+<!-- Modal -->
+<div class="container">
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: black">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title" id="heading" style="color:rgb(109,0,0)"></h4>
+        </div>
+        <div class="modal-body">
+          <h2 id="demo"></h2>
+          <img id="image_output">
+        </div>
+        <div class="modal-footer" style="background-color: black">
+          <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color: white" ><p style="color: rgb(109,0,0)">Close</p></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of modal -->
+
+</body>
+
+</html>
+<script type="text/javascript">
+    // let blob;
+      navigator.mediaDevices.getUserMedia({audio:true}).then(stream => {handlerFunction(stream)})
+            let temp_blob = new Blob()
+            function handlerFunction(stream) {
+            rec = new MediaRecorder(stream);
+            rec.ondataavailable = e => {
+              audioChunks.push(e.data);
+              if (rec.state == "inactive"){
+                let blob = new Blob(audioChunks,{type:'audio/wav'});
+                blobUrl= URL.createObjectURL(blob);
+                recordedAudio.src = blobUrl;
+                recordedAudio.controls=true;
+                recordedAudio.autoplay=true;
+                temp_blob=blob
+              }
+            }
+          }
+        function sendData() {
+          var form = new FormData();
+
+          request = new XMLHttpRequest();
+          form.append("audio",temp_blob);
+          request.open(
+                      "POST",
+                      "../save_audio/",
+                      true
+                  );
+
+          request.send(form);
+        }
+
+        record.onclick = e => {
+          console.log('I was clicked')
+          record.disabled = true;
+          record.style.backgroundColor = "blue"
+          stopRecord.disabled=false;
+          audioChunks = [];
+          rec.start();
+        }
+        stopRecord.onclick = e => {
+          console.log("I was clicked")
+          record.disabled = false;
+          stop.disabled=true;
+          record.style.backgroundColor = "red"
+          rec.stop();
+        }
+</script>
+
+<script type="text/javascript">
+  function foo(){
+  	$("#load_modal").modal('show');
+    var formData = new FormData();
+    formData.append('file', document.getElementById("post-text").files[0]);
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+        document.getElementById("demo").innerHTML = myObj.text;
+        document.getElementById("heading").innerHTML= "Here are the gestures";
+        document.getElementById("image_output").src="/media/aud2gest/imageFiles/"+myObj.image;
+        $('#load_modal').modal('toggle');
+        $("#myModal").modal('show');
+        $("#post-text").val(null);
+      }
+    };
+    xhttp.open("POST", "/home/", true);
+    xhttp.send(formData);
+  }
+  
+  function webcam(){
+    // $("#load_modal").modal('show');
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+        document.getElementById("demo").innerHTML = myObj.max_word;
+        document.getElementById("heading").innerHTML= "Here is the text";
+        $("#myModal").modal('show');
+      }
+    };
+    xhttp.open("POST", "/webcam/", true);
+    xhttp.send();
+  }
+</script>

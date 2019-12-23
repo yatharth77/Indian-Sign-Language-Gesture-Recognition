@@ -1,0 +1,24 @@
+
+body{
+/*background-color: black;*/
+overflow-x: hidden;
+}
+/**/
+.split_pane{
+    height: 90vh;
+}
+
+.left{
+    background-image: url("../images/left.jpg");
+    background-size: cover;
+}
+.right{
+    background-image: url("../images/right.jpg");
+}
+
+.middle{
+    background-color: white;
+}
+.logo{
+    margin-top: 100%;
+}

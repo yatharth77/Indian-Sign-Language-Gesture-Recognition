@@ -1,0 +1,192 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+   <link rel="stylesheet" href="{% static 'aud2gest/css/about_project.css' %}">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="{% static 'gest2aud/Emergency.css' %}" >
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: rgb(109,0,0);">
+		<a href="../index"><img src="{% static 'aud2gest/images/logo3.png' %}" height="45px" width="45px" style=""></a>
+		<div class="container">
+		  <a class="navbar-brand" href="../home">Koe No Katachi</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarResponsive" style="margin-left: 500px; font-size: 17px">
+		    <ul class="navbar-nav ml-auto">
+		      <li class="nav-item ">
+		        <a class="nav-link" href="../about_team">About Our Team
+		        </a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="../about_project">About Our Project</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="../instruction">Instructions</a>
+		      </li>
+            {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="../logout">Logout</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="../login">Login</a>
+              </li>
+            {% endif %}
+		    </ul>
+		  </div>
+		</div>
+	</nav>
+<div class="container">
+   <div id="products" class="row list-group" align="center">
+   	<form method="POST">
+         {%csrf_token%}
+      <div class="item col-xs-3 col-xs-3">
+         <div class="thumbnail">
+            <img class="group list-group-image" src="{% static 'gest2aud/gifs/fire.gif' %}" alt="" /> 
+            <div class="caption" align="center">
+               <input type="checkbox" name="emergency1" style="height: 20px;width: 20px" value="Fire in my house">
+               <h4 class="group inner list-group-item-text" align="center">Fire in my house.</h4>
+            </div>
+         </div>
+      </div>
+      <div class="item col-xs-3 col-xs-3">
+         <div class="thumbnail">
+            <img class="group list-group-image" src="{% static 'gest2aud/gifs/accident.gif' %}" alt="" /> 
+            <div class="caption" align="center">
+            	<input type="checkbox" name="emergency2" style="height: 20px;width: 20px" value="I met an accident">
+               <h4 class="group inner list-group-item-text" align="center">I met an accident</h4>
+            </div>
+         </div>
+      </div>
+      <div class="item col-xs-3 col-xs-3">
+         <div class="thumbnail">
+            <img class="group list-group-image" src="{% static 'gest2aud/gifs/bullied.gif' %}" alt="" /> 
+            <div class="caption" align="center">
+               <input type="checkbox" name="emergency3" style="height: 20px;width: 20px" value="I was bullied">
+               <h4 class="group inner list-group-item-text" align="center">I was bullied</h4>
+            </div>
+         </div>
+      </div>
+      <div class="item col-xs-3 col-xs-3">
+         <div class="thumbnail">
+            <img class="group list-group-image" src="{% static 'gest2aud/gifs/i need money.gif' %}" alt="" /> 
+            <div class="caption" align="center">
+               <input type="checkbox" name="emergency4" style="height: 20px;width: 20px" value="I need money">
+               <h4 class="group inner list-group-item-text" align="center">I need money</h4>
+            </div>
+         </div>
+      </div>
+      <div class="item col-xs-3 col-xs-3">
+         <div class="thumbnail">
+            <img class="group list-group-image" src="{% static 'gest2aud/gifs/amulance.gif' %}" alt="" /> 
+            <div class="caption" align="center">
+            	<input type="checkbox" name="emergency5" style="height: 20px;width: 20px" value="Need ambulance for a medical emergency">
+               <h4 class="group inner list-group-item-text" align="center">Need ambulance for a medical emergency</h4>
+            </div>
+         </div>
+      </div>
+      <div class="item col-xs-3 col-xs-3">
+         <div class="thumbnail">
+            <img class="group list-group-image" src="{% static 'gest2aud/gifs/bills.gif' %}" alt="" /> 
+            <div class="caption" align="center">
+            	<input type="checkbox" name="emergency6" style="height: 20px;width: 20px" value="I need your help to pay my bills">
+               <h4 class="group inner list-group-item-text" align="center">I need your help to pay my bills</h4>
+            </div>
+         </div>
+      </div>
+
+      <div class="item col-xs-3 col-xs-3">
+         <div class="thumbnail">
+            <img class="group list-group-image" src="{% static 'gest2aud/gifs/crime.gif' %}" alt="" /> 
+            <div class="caption" align="center">
+            	<input type="checkbox" name="emergency7" style="height: 20px;width: 20px" value="I need to report a crime against me">
+               <h4 class="group inner list-group-item-text" align="center">I need to report a crime against me</h4>
+            </div>
+         </div>
+      </div>
+      <div class="item col-xs-3 col-xs-3">
+         <div class="thumbnail">
+            <img class="group list-group-image" src="{% static 'gest2aud/gifs/lost location.gif' %}" alt="" /> 
+            <div class="caption" align="center">
+               <input type="checkbox" name="emergency8" style="height: 20px;width: 20px" value="I am lost somewhere. Please come to my location">
+               <h4 class="group inner list-group-item-text" align="center">I am lost somewhere. Please come to my location</h4>
+            </div>
+         </div>
+      </div>
+      <div class="item col-xs-3 col-xs-3">
+         <div class="thumbnail">
+            <img class="group list-group-image" src="{% static 'gest2aud/gifs/money lost.gif' %}" alt="" /> 
+            <div class="caption" align="center">
+            	<input type="checkbox" name="emergency9" style="height: 20px;width: 20px" value="I have lost all my money. Please help">
+               <h4 class="group inner list-group-item-text" align="center">I have lost all my money. Please help.</h4>
+            </div>
+         </div>
+      </div>
+      <div class="item col-xs-3 col-xs-3">
+         <div class="thumbnail">
+            <img class="group list-group-image" src="{% static 'gest2aud/gifs/no water.gif' %}" alt="" /> 
+            <div class="caption" align="center">
+            	<input type="checkbox" name="emergency10" style="height: 20px;width: 20px" value="No electricity and water. Need to complain">
+               <h4 class="group inner list-group-item-text" align="center">No electricity and water. Need to complain.</h4>
+            </div>
+         </div>
+      </div>
+      <div class="item col-xs-3 col-xs-3">
+         <div class="thumbnail">
+            <img class="group list-group-image" src="{% static 'gest2aud/gifs/personal issue.gif' %}" alt="" /> 
+            <div class="caption" align="center">
+            	<input type="checkbox" name="emergency11" style="height: 20px;width: 20px" value="I have some personal issue. Need someone to talk">
+               <h4 class="group inner list-group-item-text" align="center">I have some personal issue. Need someone to talk.</h4>
+            </div>
+         </div>
+      </div>
+      <div class="item col-xs-3 col-xs-3">
+         <div class="thumbnail">
+            <img class="group list-group-image" src="{% static 'gest2aud/gifs/robbed.gif' %}" alt="" /> 
+            <div class="caption" align="center">
+               <input type="checkbox" name="emergency12" style="height: 20px;width: 20px" value="I am robbed. Please help me">
+               <h4 class="group inner list-group-item-text" align="center">I am robbed. Please help me.</h4>
+            </div>
+         </div>
+      </div>
+      <div class="item col-xs-4 col-xs-4"></div>
+      <div class="item col-xs-3 col-xs-3">
+         <div class="thumbnail">
+            <img class="group list-group-image" src="{% static 'gest2aud/gifs/urgent meet.gif' %}" alt="" /> 
+            <div class="caption" align="center">
+            	<input type="checkbox" name="emergency13" style="height: 20px;width: 20px" value="I need some help. Meet me urgently">
+               <h4 class="group inner list-group-item-text" align="center">I need some help. Meet me urgently.</h4>
+            </div>
+         </div>
+      </div>
+      <!-- <div class="item col-xs- col-xs-3"></div> -->
+      
+      <button type="submit" class="btn btn-danger btn-lg" style="position: fixed;bottom: 10px; height: 50px;width: 180px">Send Mail</button>
+  </form>
+   </div>
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+	$('#list').click(function (event) {
+		event.preventDefault();
+		$('#products .item').addClass('list-group-item');
+	});
+	$('#grid').click(function (event) {
+		event.preventDefault();
+		$('#products .item').removeClass('list-group-item');
+		$('#products .item').addClass('grid-group-item');
+	});
+});
+</script>

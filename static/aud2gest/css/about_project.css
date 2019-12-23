@@ -1,0 +1,23 @@
+body{ background: url('../images/bg.jpg'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed; text-align: center; color: #C7C7D0; padding-bottom:50px; }
+.image { background-color:rgba(255, 255, 255, 0.075);  border-radius: 50%; margin: 20px auto; padding:10px; border: 1px solid #C7C7D0; margin-top:50px;}
+
+h2 {  font-weight:200; margin:10px auto; width:70%; line-height:1.5;}
+
+.socialmedia a { background-color:rgba(255, 255, 255, 0.075); text-decoration: none; font-size:16pt; transition:.5s all;
+color:#C7C7D0; border:1px solid #C7C7D0; width:50px; height:50px; display: inline-block; padding:10px; border-radius:50%; }
+
+.socialmedia a:hover,strong { color: #FFFFFF; border-color:#FFF; font-weight: 200; }
+
+div.tripple { width:364px; display: inline-block; text-align: center; vertical-align: top; }
+
+.boximg { color:#FFF; background-color:rgba(255, 255, 255, 0.075); width:346px; height:auto; margin:20px auto; border:1px solid #C7C7D0; border-radius:5px; overflow: hidden;  transition: 0.5s all;}
+.boximg img { width:346px; height:auto;  }
+.boximg p { min-height:50px; display:block; padding-top:20px; text-align:center;  }
+
+.boximg:hover { box-shadow:0 0 20px #333333; border:1px solid #FFF;}
+.footer { color: #FFFFFF; font-size:11pt; }
+hr { width:10%;background-color:rgba(255, 255, 255, 0.075); margin-top:70px; margin-bottom:70px; }
+
+#yath{
+	color: red;
+}

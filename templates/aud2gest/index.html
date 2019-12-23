@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Creative - Start Bootstrap Theme</title>
+
+  <link href="{% static 'aud2gest/css/creative.min.css' %}" rel="stylesheet">
+</head>
+
+<body id="page-top" style="overflow-x: hidden; overflow-y: hidden;background-image: url({% static 'aud2gest/images/check.jpg' %});">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav" style="">
+	<a href="../index"><img src="{% static 'aud2gest/images/logo3.png' %}" height="45px" width="45px" style=""></a>
+    <div class="container" style="">
+      <a class="navbar-brand js-scroll-trigger" href="https://www.iiitm.ac.in/index.php/en/">ABV-IIITM</a>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto my-2 my-lg-0">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="../about_team">About Our Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="../about_project">About Our Project</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="../instruction">Instructions</a>
+          </li>
+          {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="../logout">Logout</a>
+              </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="masthead" style="" >
+
+      <div class="row h-100 align-items-center justify-content-center text-center">
+        <div class="col-lg-10 align-self-end" style="margin-top: -70px;opacity: .7">
+          <h1 class=" text-white" style="font-family:'Brush Script MT' ">“Koe No Katachi”: A Silent Voice</h1>
+          <hr class="divider my-4">
+        </div>
+        <div class="col-lg-8 align-self-baseline" >
+          <p class="text-white-75 font-weight-light mb-5">Communication aid between the deaf-mute community and rest of the society</p>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="../home" >Start Here</a>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="../emergency" >Emergency</a>
+        </div>
+      </div>
+  </header>
+</body>
+</html>

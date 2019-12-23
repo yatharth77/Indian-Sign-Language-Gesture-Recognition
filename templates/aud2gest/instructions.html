@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE HTML>
+<head>
+  <title>Instructions</title>
+  
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="{% static 'aud2gest/css/about_project.css' %}">
+
+</head>
+
+<body style="overflow-y: hidden;">
+	<nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: rgb(109,0,0);">
+		<a href="../index"><img src="{% static 'aud2gest/images/logo3.png' %}" height="45px" width="45px" style=""></a>
+		<div class="container">
+		  <a class="navbar-brand" href="../home">Koe No Katachi</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarResponsive">
+		    <ul class="navbar-nav ml-auto">
+		      <li class="nav-item ">
+		        <a class="nav-link" href="../about_team">About Our Team
+		        </a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="../about_project">About Our Project</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Instructions</a>
+		      </li>
+		      {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="../logout">Logout</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="../login">Login</a>
+              </li>
+              {% endif %}
+		    </ul>
+		  </div>
+		</div>
+	</nav>
+
+<h1 style="color: black"><center>Instructions</center></h1>
+<!-- <img class="image" src="https://templated.co/items/demos/visualize/images/avatar.jpg"/> -->
+<h2 >
+	<ul>
+		<h3 style="color: black">For gesture to speech conversion</h3>
+		<li style="text-align: left; color: white">Once you click the start button, the webcam window will open. Place your hand in the rectangle provided.</li>
+		<li style="text-align: left; color: white">The respective text will appear on another window and shortly after the speech will be heard.</li>
+		<h3 style="color: black">For speech to gesture conversion</h3>
+		<li style="text-align: left; color: white">Go to the start button to start recording and after you've finished click on submit.</li>
+		<li style="text-align: left; color: white">Speak clearly and try to avoid background noises.</li>
+	</ul>
+</h2>
+<!-- <div class="socialmedia">
+<a href="#"><i class="fa fa-twitter"></i></a>
+<a href="#"><i class="fa fa-facebook"></i></a>
+<a href="#"><i class="fa fa-instagram"></i></a>
+<a href="#"><i class="fa fa-tumblr"></i></a>
+</div> -->
+<hr />
+<p class="footer" align="center">© Koe No Katachi. All rights reserved. Design: ABV-IIITM.</p>
+</body>
+</html>

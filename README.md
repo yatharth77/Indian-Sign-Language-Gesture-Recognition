@@ -79,4 +79,4 @@ and 97% validation accuracy for two-hand features respectively. The SVM used in 
 HOG features, produced and accuracy of 96.79%. This result
 is significantly better than any other machine learning algorithm for the 26 classes. The confusion matrix in Fig. 6 segregates the result obtained on the 6085 test samples into truepositives, true-negatives, false-positives and false-negatives.
 
-![alt text](https://drive.google.com/open?id=1ROqXhaDv1gmHhFq-xt7IhaWFrrO5Cr12)
+![alt text](https://github.com/yatharth77/ISL-translator/blob/master/O_BTP.jpeg)

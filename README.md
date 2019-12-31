@@ -83,3 +83,12 @@ is significantly better than any other machine learning algorithm for the 26 cla
 ![alt text](https://github.com/yatharth77/ISL-translator/blob/master/coil.PNG)
 ![alt text](https://github.com/yatharth77/ISL-translator/blob/master/coil_out1.PNG)
 
+# Interface 
+
+## WebCam Input
+![alt text](https://github.com/yatharth77/ISL-translator/blob/master/O_BTP.jpeg)
+## Gesture Based KeyBoard
+![alt text](https://github.com/yatharth77/ISL-translator/blob/master/Capture1.PNG)
+## Emergency Messaging Facility Page
+![alt text](https://github.com/yatharth77/ISL-translator/blob/master/Capture3.PNG)
+

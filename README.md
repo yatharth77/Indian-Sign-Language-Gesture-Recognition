@@ -80,7 +80,6 @@ categorising one-hand features and 99% training accuracy
 and 97% validation accuracy for two-hand features respectively. The SVM used in hierarchical model for categorising into one-hand and two-hand gestures, combined with the
 HOG features, produced and accuracy of 96.79%. This result
 is significantly better than any other machine learning algorithm for the 26 classes. The confusion matrix in Fig. 6 segregates the result obtained on the 6085 test samples into truepositives, true-negatives, false-positives and false-negatives.
-
-![alt text](https://github.com/yatharth77/ISL-translator/blob/master/coil_out1.PNG)
 ![alt text](https://github.com/yatharth77/ISL-translator/blob/master/coil.PNG)
+![alt text](https://github.com/yatharth77/ISL-translator/blob/master/coil_out1.PNG)
 

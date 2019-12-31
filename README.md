@@ -15,7 +15,7 @@ best accuracy of 98.52% for one-hand and 97% for two-hand gestures. Thereafter, 
 built in Django using the best model (viz. hierarchical neural networks) for real-time gesture to speech conversion
 and vice versa. This publicly accessible interface can be used by anyone who wishes to learn or converse in ISL.
 
-#Methodology
+# Methodology
 
 In this section, we would discuss the architectures of various self-developed and pre-trained deep neural networks,
 machine learning algorithms and their corresponding performances for the task of hand gesture to audio and audio to
@@ -44,3 +44,22 @@ network was considered in this model.
 of a novel hierarchical model for classification which
 resembles a tree-like structure. It involves initially classifying gestures into two categories (one-hand or twohand), and subsequently feeding them into further deep
 neural networks. The corresponding outputs were utilized for categorizing them into the 26 English alphabets.
+
+
+# Experimental Results
+
+All the three networks were tested on our dataset of around
+1,49,568 images. The testing dataset consists of hand images
+clicked on a black background. The images were augmented,
+resized and pre-processed as per the network requirements
+mentioned earlier. The pre-trained VGG16 model with transfer learning produced an accuracy of 53% and the fine-tuned
+model resulted in an accuracy of 94.52%. The reason for low
+accuracy in VGG16 can be attributed to the fact that it was
+initially trained for 1000 categories. However, the present
+model works on 26 hand gestures and out of them, quite a
+few are very similar to one another. The hierarchical model
+resulted in a training loss of 0.0016, thus resulting in a training accuracy of 99% and a validation accuracy of 98.52% for
+categorising one-hand features and 99% training accuracy
+and 97% validation accuracy for two-hand features respectively. The SVM used in hierarchical model for categorising into one-hand and two-hand gestures, combined with the
+HOG features, produced and accuracy of 96.79%. This result
+is significantly better than any other machine learning algorithm for the 26 classes. The confusion matrix in Fig. 6 segregates the result obtained on the 6085 test samples into truepositives, true-negatives, false-positives and false-negatives.

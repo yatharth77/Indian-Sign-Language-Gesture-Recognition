@@ -85,6 +85,37 @@ is significantly better than any other machine learning algorithm for the 26 cla
 ![alt text](https://github.com/yatharth77/ISL-translator/blob/master/coil.PNG)
 ![alt text](https://github.com/yatharth77/ISL-translator/blob/master/coil_out1.PNG)
 
+# Algorithm for formation of Valid English Words from given sequence of alphabets as input
+
+The natural language based output network was developed
+for rectifying errors made by the CNN model. The main
+motive of this model is to correct the falsely predicted outcomes during ISL-conversation. Thus, a misspelled word
+can be corrected by using an algorithm that takes into account the possible words in the English language that can be
+formed by the predicted alphabets via intelligently changing a letter or two. Such algorithms are useful in practical terms to overcome the flaws of CNN. A 13-layer CNN
+was developed which received these images, with their pix-
+5
+els scaled between -1 and +1. The neural net was a simple
+network comprising of 3×3 convolutional filters followed by
+max-pooling. The latter layers consisted dropout (0.3-0.4)
+and batch normalisation for avoiding any overfitting. Adam
+optimiser with a learning rate of 0.0002 was used to minimize the categorical cross-entropy loss function. The softmax layer provided output as 26 probabilities, each corresponding to the output being that particular alphabet. Exploiting this characteristic of the softmax layer, we calculated
+the total probability for a given word, which is a collection
+of alphabets as the sum of all the probabilities of the highest
+predicted output for that alphabet.
+For example, if the word that a user inputs alphabet of
+‘cat’, then for each letter ‘c’, ‘a’ and ‘t’, the probabilities for
+the top-3 predicted letters will be saved. This will be the
+overall probability of the word being ‘cat’. Now, if the output probabilities that the CNN provided with respect to each
+letter corresponded to ‘cet’, then this word will be searched
+through a corpora of length=3 in the English dictionary. If no
+such word exists, it will change the letters (one at a time) by
+the next highest probable letter, and check it again in the dictionary. If such a word exists, then it is stored along with it’s
+total probability. The model output the word with the highest
+probability belonging in the English dictionary as the final
+prediction. This model works on the idea that if a user wants
+to converse in finger-spelled ISL, he/she is likely to depict
+a word that exists in the English dictionary (apart from unusual proper nouns).
+
 # Interface 
 
 ## WebCam Input
@@ -93,4 +124,5 @@ is significantly better than any other machine learning algorithm for the 26 cla
 ![alt text](https://github.com/yatharth77/ISL-translator/blob/master/Capture1.PNG)
 ## Emergency Messaging Facility Page
 ![alt text](https://github.com/yatharth77/ISL-translator/blob/master/Capture3.PNG)
+
 

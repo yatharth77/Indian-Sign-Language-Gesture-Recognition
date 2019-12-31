@@ -15,6 +15,8 @@ best accuracy of 98.52% for one-hand and 97% for two-hand gestures. Thereafter, 
 built in Django using the best model (viz. hierarchical neural networks) for real-time gesture to speech conversion
 and vice versa. This publicly accessible interface can be used by anyone who wishes to learn or converse in ISL.
 
+![alt text](https://github.com/yatharth77/ISL-translator/blob/master/isl.png)
+
 ## Dataset
 The dataset used for this work was based on ISL. According
 to the best of the knowledge of the authors, there does not
@@ -85,7 +87,7 @@ is significantly better than any other machine learning algorithm for the 26 cla
 ![alt text](https://github.com/yatharth77/ISL-translator/blob/master/coil.PNG)
 ![alt text](https://github.com/yatharth77/ISL-translator/blob/master/coil_out1.PNG)
 
-# Algorithm for formation of Valid English Words from given sequence of alphabets as input
+## Algorithm for formation of Valid English Words from given sequence of alphabets as input
 
 The natural language based output network was developed
 for rectifying errors made by the CNN model. The main
@@ -115,6 +117,8 @@ probability belonging in the English dictionary as the final
 prediction. This model works on the idea that if a user wants
 to converse in finger-spelled ISL, he/she is likely to depict
 a word that exists in the English dictionary (apart from unusual proper nouns).
+
+![alt text](https://github.com/yatharth77/ISL-translator/blob/master/tree.png)
 
 # Interface 
 

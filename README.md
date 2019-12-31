@@ -39,6 +39,8 @@ done on Keras using Tensorflow as the backend. A pictorial
 overview of our entire framework is presented in Fig. 1. The
 three individual models are briefly discussed as follows.
 
+![alt text](https://github.com/yatharth77/ISL-translator/blob/master/flow.PNG)
+
 • **Pre-trained VGG16 Model**: Under this approach, the
 gestures were classified using a pre-trained VGG16
 model based on the Imagenet dataset. We truncated
@@ -81,4 +83,3 @@ is significantly better than any other machine learning algorithm for the 26 cla
 
 ![alt text](https://github.com/yatharth77/ISL-translator/blob/master/O_BTP.jpeg)
 
-![alt text](https://github.com/yatharth77/ISL-translator/blob/master/flow.PNG)

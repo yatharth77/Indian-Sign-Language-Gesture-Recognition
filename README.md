@@ -1,6 +1,6 @@
 # ISL-translator
 
-Abstract
+## Abstract
 
 Sign language is the language of the deaf and mute. However, this particular population of the
 world is unfortunately overlooked as sign language is not understood by the majority hearing population. In
@@ -15,7 +15,7 @@ best accuracy of 98.52% for one-hand and 97% for two-hand gestures. Thereafter, 
 built in Django using the best model (viz. hierarchical neural networks) for real-time gesture to speech conversion
 and vice versa. This publicly accessible interface can be used by anyone who wishes to learn or converse in ISL.
 
-# Methodology
+## Methodology
 
 In this section, we would discuss the architectures of various self-developed and pre-trained deep neural networks,
 machine learning algorithms and their corresponding performances for the task of hand gesture to audio and audio to
@@ -46,7 +46,7 @@ resembles a tree-like structure. It involves initially classifying gestures into
 neural networks. The corresponding outputs were utilized for categorizing them into the 26 English alphabets.
 
 
-# Experimental Results
+## Experimental Results
 
 All the three networks were tested on our dataset of around
 1,49,568 images. The testing dataset consists of hand images

@@ -15,6 +15,21 @@ best accuracy of 98.52% for one-hand and 97% for two-hand gestures. Thereafter, 
 built in Django using the best model (viz. hierarchical neural networks) for real-time gesture to speech conversion
 and vice versa. This publicly accessible interface can be used by anyone who wishes to learn or converse in ISL.
 
+## Dataset
+The dataset used for this work was based on ISL. According
+to the best of the knowledge of the authors, there does not
+exist an authentic and complete dataset for all the 26 alphabets of English language for ISL. Our dataset was manually
+prepared by clicking various images of each finger-spelled
+alphabet and applying different forms of data augmentation
+techniques. At the end, the dataset contained over 1,50,000
+images of all 26 categories. There were approximately 5,500
+images of each alphabet. To keep the data consistent, the
+same background was used for most of the images. Also, the
+images were clicked in different lighting conditions to train a
+robust model resistant of any such changes in the surroundings. The images in this dataset were clicked by a Redmi
+Note 5 Pro, 20 megapixel camera. All the RGB images were
+resized to 144×144 pixels per image so as to remove the possibility of varying sizes. Fig.2 shows a few sample images from this dataset.
+
 ## Methodology
 
 In this section, we would discuss the architectures of various self-developed and pre-trained deep neural networks,

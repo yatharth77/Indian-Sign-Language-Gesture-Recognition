@@ -80,3 +80,5 @@ HOG features, produced and accuracy of 96.79%. This result
 is significantly better than any other machine learning algorithm for the 26 classes. The confusion matrix in Fig. 6 segregates the result obtained on the 6085 test samples into truepositives, true-negatives, false-positives and false-negatives.
 
 ![alt text](https://github.com/yatharth77/ISL-translator/blob/master/O_BTP.jpeg)
+
+![alt text](https://github.com/yatharth77/ISL-translator/blob/master/flow.PNG)

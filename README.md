@@ -30,6 +30,8 @@ robust model resistant of any such changes in the surroundings. The images in th
 Note 5 Pro, 20 megapixel camera. All the RGB images were
 resized to 144×144 pixels per image so as to remove the possibility of varying sizes. Fig.2 shows a few sample images from this dataset.
 
+![alt text](https://github.com/yatharth77/ISL-translator/blob/master/dataset.PNG)
+
 ## Methodology
 
 In this section, we would discuss the architectures of various self-developed and pre-trained deep neural networks,

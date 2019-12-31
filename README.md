@@ -24,14 +24,14 @@ done on Keras using Tensorflow as the backend. A pictorial
 overview of our entire framework is presented in Fig. 1. The
 three individual models are briefly discussed as follows.
 
-• Pre-trained VGG16 Model: Under this approach, the
+• **Pre-trained VGG16 Model**: Under this approach, the
 gestures were classified using a pre-trained VGG16
 model based on the Imagenet dataset. We truncated
 its last layer and then added custom designed layers to
 provide a baseline comparison with the state of the art
 networks.
 
-• Natural Language Based Output Networks: For this
+• **Natural Language Based Output Networks**: For this
 model, a Deep Convolutional Neural Network (DCNN)
 with 26 categories was developed. Later, the output
 was fed to an English Corpora based model for eradicating any errors during classification. This process
@@ -40,7 +40,7 @@ particular word in the English vocabulary. Moreover,
 only the top-3 accuracy scores provided by the neural
 network was considered in this model.
 
-• Hierarchical Network: Our final approach comprises
+• **Hierarchical Network**: Our final approach comprises
 of a novel hierarchical model for classification which
 resembles a tree-like structure. It involves initially classifying gestures into two categories (one-hand or twohand), and subsequently feeding them into further deep
 neural networks. The corresponding outputs were utilized for categorizing them into the 26 English alphabets.

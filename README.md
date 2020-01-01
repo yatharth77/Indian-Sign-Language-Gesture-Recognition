@@ -18,6 +18,7 @@ and vice versa. This publicly accessible interface can be used by anyone who wis
 ![alt text](https://github.com/yatharth77/ISL-translator/blob/master/isl.png)
 
 ## Dataset
+(for data set mail at y.s.saxena7@gmail.com)
 The dataset used for this work was based on ISL. According
 to the best of the knowledge of the authors, there does not
 exist an authentic and complete dataset for all the 26 alphabets of English language for ISL. Our dataset was manually

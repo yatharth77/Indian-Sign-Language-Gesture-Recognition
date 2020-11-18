@@ -52,7 +52,7 @@ mock==2.0.0
 nbconvert==5.4.1
 nbformat==4.4.0
 networkx==2.3
-notebook==5.7.8
+notebook==6.1.5
 np-utils==0.5.10.0
 numpy==1.14.5
 opencv-contrib-python==4.0.0.21
